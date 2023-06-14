@@ -1,7 +1,23 @@
 <div class="p-3">
   <div class="card">
     <div class="card-body">
-      <h1>Chat Component</h1>
+      <form [formGroup]="querryForm" (ngSubmit)="handleAsk()">
+        <div class="mb-3">
+          <label for="" class="form-label"> Querry </label>
+          <textarea
+            formControlName="querry"
+            class="form-control"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+        <button class="btn btn-primary">Ask</button>
+      </form>
+      <div class="alert alert-success">
+        <pre>{{ result | json }}</pre>
+      </div>
     </div>
   </div>
 </div>

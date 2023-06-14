@@ -24,8 +24,12 @@ export class ChatGptComponent implements OnInit {
     let url = 'https://api.openai.com/v1/chat/completions';
     let httpHeaders = new HttpHeaders().set(
       'Authorization',
-      'Bearer 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'
+      'Bearer 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'
     );
+    this.messages.push({
+      role: 'user',
+      content: this.querryForm.value.querry,
+    });
     let payload = {
       model: 'gpt-3.5-turbo',
       messages: this.messages,

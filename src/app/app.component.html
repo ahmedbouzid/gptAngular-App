@@ -2,8 +2,12 @@
   <ul class="nav nav-pills">
     <li *ngFor="let action of action">
       <button
+        [ngClass]="
+          action === cuurentAction
+            ? 'btn btn-primary ms-1'
+            : 'btn btn-outline-primary ms-1'
+        "
         (click)="handleAction(action)"
-        class="btn btn-outline-primary ms-1"
       >
         {{ action.titre }}
         <i class="bi bi-{{ action.icon }}"></i>

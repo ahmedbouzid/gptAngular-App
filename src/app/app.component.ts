@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  cuurentAction: any;
   constructor(private router: Router) {}
   action = [
     { route: '/index', titre: 'index', icon: 'house' },
@@ -15,5 +16,6 @@ export class AppComponent {
 
   handleAction(action: any) {
     this.router.navigate([action.route]);
+    this.cuurentAction = action;
   }
 }
